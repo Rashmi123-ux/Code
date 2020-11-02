@@ -1,0 +1,38 @@
+Design:
+1. The server will listen to multiple client on a 54321 port number.
+2. For current design, the server will accept 100 client connection.
+3. The server will listen commands from multiple client.
+4. The server will reply to respective client by sending result of command which will be executed on shell.
+3. The Software will be written in C language.
+4. Linux GCC will be used to complie the software.
+
+Solution:
+1. Threads will be used for multiple client connection.
+2. Current solution will be tested using looped back ipv4 127.0.0.1
+
+Instruction to build and run output as follows:
+1. Create Server directory
+2. Copy and paste server source file and makefile into it.
+3. Present directory should be Server directory.
+4. Run make command
+5. If no errors, then proceed with following command
+	./execname PORT
+	where PORT is Port number passed as command line argument
+6. Follow above 1 to 5 steps for client.
+
+
+Known Limitations:
+1. 2Kbytes static memory allocated for read and write buffer.
+2. cd command is not working as per expections.
+
+GCC version is 9.3.0
+Linux osboxes 5.4.0 Ubuntu
+
+Testing Result:
+1. Run server as process in shell.
+2. Created 4 instances of client in different shell as separate processes.
+3. Server-Client communication is tested by connecting 4 clients simaltanously to server.
+4. User entered commands on a one of connected client and it reached to server then server replied the result of command successfully.
+
+
+
